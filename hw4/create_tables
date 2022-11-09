@@ -7,6 +7,9 @@ DROP TABLE OWNER;
 DROP TABLE PROPERTY;
 DROP TABLE PROPERTY_OWNER;
 
+SET FOREIGN_KEY_CHECKS=1;
+
+
 CREATE TABLE SALESOFFICE
     (Office_Number         INTEGER          NOT NULL,
      Location              VARCHAR(50)              ,
