@@ -17,14 +17,15 @@ CREATE TABLE Publisher_T
 CONSTRAINT Name_PK PRIMARY KEY (Name));
 
 CREATE TABLE Books_T
-             (ISBN               VARCHAR(20)     NOT NULL,
+             (ISBN               VARCHAR(30)     NOT NULL,
               Title              VARCHAR(50)             ,
               Author             VARCHAR(50)             ,
               Year_Published     INT(4)                  ,
               Genre              VARCHAR(15)             ,
-              Qunatity           int(3)          NOT NULL,
+              Quantity           int(3)          NOT NULL,
               Cost               DECIMAL(6,2)    NOT NULL,
               Price              DECIMAL(6,2)    NOT NULL,
+              Publisher          VARCHAR(50)             ,
 
 CONSTRAINT ISBN_PK PRIMARY KEY (ISBN));
 
@@ -35,7 +36,7 @@ CREATE TABLE Shopping_Cart_T
 CONSTRAINT ISBN_PK PRIMARY KEY (ID));
 
 CREATE TABLE Shopping_Cart_Book_T
-             (ISBN               VARCHAR(20)     NOT NULL,
+             (ISBN               VARCHAR(30)     NOT NULL,
 	          ShoppingCartID     INTEGER(15)     NOT NULL,
 
 CONSTRAINT SCB_PK PRIMARY KEY (ISBN, ShoppingCartID),
@@ -69,129 +70,110 @@ delete from Customer_T;
 
 
 
-INSERT INTO Customer_T  (CustomerID, CustomerName, CustomerAddress, CustomerCity, CustomerState, CustomerPostalCode)
-VALUES  (1, 'Contemporary Casuals', '1355 S Hines Blvd', 'Gainesville', 'FL', '32601-2871'));
-INSERT INTO Customer_T  (CustomerID, CustomerName, CustomerAddress, CustomerCity, CustomerState, CustomerPostalCode)
-VALUES  (2, 'Value Furniture', '15145 S.W. 17th St.', 'Plano', 'TX', '75094-7743'));
-INSERT INTO Customer_T  (CustomerID, CustomerName, CustomerAddress, CustomerCity, CustomerState, CustomerPostalCode)
-VALUES  (3, 'Home Furnishings', '1900 Allard Ave.', 'Albany', 'NY', '12209-1125'));
-INSERT INTO Customer_T  (CustomerID, CustomerName, CustomerAddress, CustomerCity, CustomerState, CustomerPostalCode)
-VALUES  (4, 'Eastern Furniture', '1925 Beltline Rd.', 'Carteret', 'NJ', '07008-3188'));
-INSERT INTO Customer_T  (CustomerID, CustomerName, CustomerAddress, CustomerCity, CustomerState, CustomerPostalCode)
-VALUES  (5, 'Impressions', '5585 Westcott Ct.', 'Sacramento', 'CA', '94206-4056'));
-INSERT INTO Customer_T  (CustomerID, CustomerName, CustomerAddress, CustomerCity, CustomerState, CustomerPostalCode)
-VALUES  (6, 'Furniture Gallery', '325 Flatiron Dr.', 'Boulder', 'CO', '80514-4432'));
-INSERT INTO Customer_T  (CustomerID, CustomerName, CustomerAddress, CustomerCity, CustomerState, CustomerPostalCode)
-VALUES  (7, 'Period Furniture', '394 Rainbow Dr.', 'Seattle', 'WA', '97954-5589'));
-INSERT INTO Customer_T  (CustomerID, CustomerName, CustomerAddress, CustomerCity, CustomerState, CustomerPostalCode)
-VALUES  (8, 'California Classics', '816 Peach Rd.', 'Santa Clara', 'CA', '96915-7754'));
-INSERT INTO Customer_T  (CustomerID, CustomerName, CustomerAddress, CustomerCity, CustomerState, CustomerPostalCode)
-VALUES  (9, 'M and H Casual Furniture', '3709 First Street', 'Clearwater', 'FL', '34620-2314'));
-INSERT INTO Customer_T  (CustomerID, CustomerName, CustomerAddress, CustomerCity, CustomerState, CustomerPostalCode)
-VALUES  (10, 'Seminole Interiors', '2400 Rocky Point Dr.', 'Seminole', 'FL', '34646-4423'));
-INSERT INTO Customer_T  (CustomerID, CustomerName, CustomerAddress, CustomerCity, CustomerState, CustomerPostalCode)
-VALUES  (11, 'American Euro Lifestyles', '2424 Missouri Ave N.', 'Prospect Park', 'NJ', '07508-5621'));
-INSERT INTO Customer_T  (CustomerID, CustomerName, CustomerAddress, CustomerCity, CustomerState, CustomerPostalCode)
-VALUES  (12, 'Battle Creek Furniture', '345 Capitol Ave. SW', 'Battle Creek', 'MI', '49015-3401'));
-INSERT INTO Customer_T  (CustomerID, CustomerName, CustomerAddress, CustomerCity, CustomerState, CustomerPostalCode)
-VALUES  (13, 'Heritage Furnishings', '66789 College Ave.', 'Carlisle', 'PA', '17013-8834'));
-INSERT INTO Customer_T  (CustomerID, CustomerName, CustomerAddress, CustomerCity, CustomerState, CustomerPostalCode)
-VALUES  (14, 'Kaneohe Homes', '112 Kiowai St.', 'Kaneohe', 'HI', '96744-2537'));
-INSERT INTO Customer_T  (CustomerID, CustomerName, CustomerAddress, CustomerCity, CustomerState, CustomerPostalCode)
-VALUES  (15, 'Mountain Scenes', '4132 Main Street', 'Ogden', 'UT', '84403-4432'));
+INSERT INTO Publisher_T  (Name, Address, City, State, PostalCode, Website)
+VALUES  ('Dover Publications', '1355 S Hines Blvd', 'Gainesville', 'FL', '32601-2871', 'https://store.doverpublications.com/');
+INSERT INTO Publisher_T  (Name, Address, City, State, PostalCode, Website)
+VALUES  ('Grove Atlantic', '15145 S.W. 17th St.', 'Plano', 'TX', '75094-7743', 'https://groveatlantic.com/');
+INSERT INTO Publisher_T  (Name, Address, City, State, PostalCode, Website)
+VALUES  ('Soho Teen', '1900 Allard Ave.', 'Albany', 'NY', '12209-1125', 'https://sohopress.com/soho-teen/');
+INSERT INTO Publisher_T  (Name, Address, City, State, PostalCode, Website)
+VALUES  ('Knopf Doubleday', '1925 Beltline Rd.', 'Carteret', 'NJ', '07008-3188', 'http://knopfdoubleday.com/');
+INSERT INTO Publisher_T  (Name, Address, City, State, PostalCode, Website)
+VALUES  ('Tilbury House', '5585 Westcott Ct.', 'Sacramento', 'CA', '94206-4056', 'https://www.tilburyhouse.com/');
+INSERT INTO Publisher_T  (Name, Address, City, State, PostalCode, Website)
+VALUES  ('TouchWood Editions', '325 Flatiron Dr.', 'Boulder', 'CO', '80514-4432', 'https://www.touchwoodeditions.com/');
+INSERT INTO Publisher_T  (Name, Address, City, State, PostalCode, Website)
+VALUES  ('Simon & Schuster', '394 Rainbow Dr.', 'Seattle', 'WA', '97954-5589', 'https://www.simonandschuster.co.uk/');
+INSERT INTO Publisher_T  (Name, Address, City, State, PostalCode, Website)
+VALUES  ('And Other Stories', '816 Peach Rd.', 'Santa Clara', 'CA', '96915-7754', 'https://www.andotherstories.org/');
 
-
-
-
-
-INSERT INTO Order_T  (OrderID, OrderDate, CustomerID)
-VALUES  (1001, '2022-10-21', 1));
-INSERT INTO Order_T  (OrderID, OrderDate, CustomerID)
-VALUES  (1002, '2022-10-21', 8));
-INSERT INTO Order_T  (OrderID, OrderDate, CustomerID)
-VALUES  (1003, '2022-10-22', 15));
-INSERT INTO Order_T  (OrderID, OrderDate, CustomerID)
-VALUES  (1004, '2022-10-22', 5));
-INSERT INTO Order_T  (OrderID, OrderDate, CustomerID)
-VALUES  (1005, '2022-10-24', 3));
-INSERT INTO Order_T  (OrderID, OrderDate, CustomerID)
-VALUES  (1006, '2022-10-24', 2));
-INSERT INTO Order_T  (OrderID, OrderDate, CustomerID)
-VALUES  (1007, '2022-10-27', 11));
-INSERT INTO Order_T  (OrderID, OrderDate, CustomerID)
-VALUES  (1008, '2022-10-30', 12));
-INSERT INTO Order_T  (OrderID, OrderDate, CustomerID)
-VALUES  (1009, '2022-11-01', 4));
-INSERT INTO Order_T  (OrderID, OrderDate, CustomerID)
-VALUES  (1010, '2022-11-01', 1));
-
+INSERT INTO Books_T  (ISBN, Title, Author, Year_Published, Genre, Quantity, Cost, Price, Publisher)
+VALUES  ('978-1-60309-514-3', 'Advantageous', 'Benny Fishall', 1998, 'Fiction', 15, 6.00, , 'Dover Publications');
+INSERT INTO Books_T  (ISBN, Title, Author, Year_Published, Genre, Quantity, Cost, Price, Publisher)
+VALUES  ('657-3-24851-814-7', 'A History of Welsh Comedians', 'Dai Laffyn', 2010, 'Non-Fiction', 8, 11.00, , 'Grove Atlantic');
+INSERT INTO Books_T  (ISBN, Title, Author, Year_Published, Genre, Quantity, Cost, Price, Publisher)
+VALUES  ('874-4-74851-242-3', 'American Breakfast','Chris P. Bacon', 2015, 'Cooking', 6, 18.00, ,'Soho Teen');
+INSERT INTO Books_T  (ISBN, Title, Author, Year_Published, Genre, Quantity, Cost, Price, Publisher)z
+VALUES  ('281-8-68247-265-6', 'Amphibians', 'Newt and Sally Mander', 2005, 'Non-Fiction', 7, 5.00, , 'Knopf Doubleday');
+INSERT INTO Books_T  (ISBN, Title, Author, Year_Published, Genre, Quantity, Cost, Price, Publisher)
+VALUES  ('952-2-61146-428-5', 'Antibiotics', 'Penny Sillin', 2017, 'Fantasy', 10, 5.00, , 'Tilbury House');
+INSERT INTO Books_T  (ISBN, Title, Author, Year_Published, Genre, Quantity, Cost, Price, Publisher)
+VALUES  ('871-1-36563-343-2', 'Are You Dancing?', 'R. U. Asking', 2015, 'Horror', 15, 5.00, , 'TouchWood Editions');
+INSERT INTO Books_T  (ISBN, Title, Author, Year_Published, Genre, Quantity, Cost, Price, Publisher)
+VALUES  ('299-1-66557-167-3', 'Artificial Weightlessness', 'Andy Gravity', 2011, 'Horror', 9, );
+INSERT INTO Books_T  (ISBN, Title, Author, Year_Published, Genre, Quantity, Cost, Price, Publisher)
+VALUES  ('984-5-31111-373-6', 'Bacteria', 'Mike Robes');
+INSERT INTO Books_T  (ISBN, Title, Author, Year_Published, Genre, Quantity, Cost, Price, Publisher)
+VALUES  ('768-7-79647-392-7', 'Blushing', 'Rosie Cheeks');
+INSERT INTO Books_T  (ISBN, Title, Author, Year_Published, Genre, Quantity, Cost, Price, Publisher)
+VALUES  ('791-2-28143-123-2', 'Breath of Fresh Air', 'Hal E. Tosis');
 
 
 
 INSERT INTO ProductLine_T  (ProductLineID, ProductLineName)
-VALUES  (1, 'Cherry Tree'));
+VALUES  (1, 'Cherry Tree');
 INSERT INTO ProductLine_T  (ProductLineID, ProductLineName)
-VALUES  (2, 'Scandinavia'));
+VALUES  (2, 'Scandinavia');
 INSERT INTO ProductLine_T  (ProductLineID, ProductLineName)
-VALUES  (3, 'Country Look'));
+VALUES  (3, 'Country Look');
 
 
 INSERT INTO Product_T  (ProductID, ProductDescription, ProductFinish, ProductStandardPrice, ProductLineID)
-VALUES  (1, 'End Table', 'Cherry', 175, 1));
+VALUES  (1, 'End Table', 'Cherry', 175, 1);
 INSERT INTO Product_T  (ProductID, ProductDescription, ProductFinish, ProductStandardPrice, ProductLineID)
-VALUES  (2, 'Coffee Table', 'Natural Ash', 200, 2));
+VALUES  (2, 'Coffee Table', 'Natural Ash', 200, 2);
 INSERT INTO Product_T  (ProductID, ProductDescription, ProductFinish, ProductStandardPrice, ProductLineID)
-VALUES  (3, 'Computer Desk', 'Natural Ash', 375, 2));
+VALUES  (3, 'Computer Desk', 'Natural Ash', 375, 2);
 INSERT INTO Product_T  (ProductID, ProductDescription, ProductFinish, ProductStandardPrice, ProductLineID)
-VALUES  (4, 'Entertainment Center', 'Natural Maple', 650, 3));
+VALUES  (4, 'Entertainment Center', 'Natural Maple', 650, 3);
 INSERT INTO Product_T  (ProductID, ProductDescription, ProductFinish, ProductStandardPrice, ProductLineID)
-VALUES  (5, 'Writers Desk', 'Cherry', 325, 1));
+VALUES  (5, 'Writers Desk', 'Cherry', 325, 1);
 INSERT INTO Product_T  (ProductID, ProductDescription, ProductFinish, ProductStandardPrice, ProductLineID)
-VALUES  (6, '8-Drawer Desk', 'White Ash', 750, 2));
+VALUES  (6, '8-Drawer Desk', 'White Ash', 750, 2);
 INSERT INTO Product_T  (ProductID, ProductDescription, ProductFinish, ProductStandardPrice, ProductLineID)
-VALUES  (7, 'Dining Table', 'Natural Ash', 800, 2));
+VALUES  (7, 'Dining Table', 'Natural Ash', 800, 2);
 INSERT INTO Product_T  (ProductID, ProductDescription, ProductFinish, ProductStandardPrice, ProductLineID)
-VALUES  (8, 'Computer Desk', 'Walnut', 250, 3));
+VALUES  (8, 'Computer Desk', 'Walnut', 250, 3);
 
 
 
 
 INSERT INTO OrderLine_T  (OrderID, ProductID, OrderedQuantity)
-VALUES  (1001, 1, 2));
+VALUES  (1001, 1, 2);
 INSERT INTO OrderLine_T  (OrderID, ProductID, OrderedQuantity)
-VALUES  (1001, 2, 2));
+VALUES  (1001, 2, 2);
 INSERT INTO OrderLine_T  (OrderID, ProductID, OrderedQuantity)
-VALUES  (1001, 4, 1));
+VALUES  (1001, 4, 1);
 INSERT INTO OrderLine_T  (OrderID, ProductID, OrderedQuantity)
-VALUES  (1002, 3, 5));
+VALUES  (1002, 3, 5);
 INSERT INTO OrderLine_T  (OrderID, ProductID, OrderedQuantity)
-VALUES  (1003, 3, 3));
+VALUES  (1003, 3, 3);
 INSERT INTO OrderLine_T  (OrderID, ProductID, OrderedQuantity)
-VALUES  (1004, 6, 2));
+VALUES  (1004, 6, 2);
 INSERT INTO OrderLine_T  (OrderID, ProductID, OrderedQuantity)
-VALUES  (1004, 8, 2));
+VALUES  (1004, 8, 2);
 INSERT INTO OrderLine_T  (OrderID, ProductID, OrderedQuantity)
-VALUES  (1005, 4, 3));
+VALUES  (1005, 4, 3);
 INSERT INTO OrderLine_T  (OrderID, ProductID, OrderedQuantity)
-VALUES  (1006, 4, 1));
+VALUES  (1006, 4, 1);
 INSERT INTO OrderLine_T  (OrderID, ProductID, OrderedQuantity)
-VALUES  (1006, 5, 2));
+VALUES  (1006, 5, 2);
 INSERT INTO OrderLine_T  (OrderID, ProductID, OrderedQuantity)
-VALUES  (1006, 7, 2));
+VALUES  (1006, 7, 2);
 INSERT INTO OrderLine_T  (OrderID, ProductID, OrderedQuantity)
-VALUES  (1007, 1, 3));
+VALUES  (1007, 1, 3);
 INSERT INTO OrderLine_T  (OrderID, ProductID, OrderedQuantity)
-VALUES  (1007, 2, 2));
+VALUES  (1007, 2, 2);
 INSERT INTO OrderLine_T  (OrderID, ProductID, OrderedQuantity)
-VALUES  (1008, 3, 3));
+VALUES  (1008, 3, 3);
 INSERT INTO OrderLine_T  (OrderID, ProductID, OrderedQuantity)
-VALUES  (1008, 8, 3));
+VALUES  (1008, 8, 3);
 INSERT INTO OrderLine_T  (OrderID, ProductID, OrderedQuantity)
-VALUES  (1009, 4, 2));
+VALUES  (1009, 4, 2);
 INSERT INTO OrderLine_T  (OrderID, ProductID, OrderedQuantity)
-VALUES  (1009, 7, 3));
+VALUES  (1009, 7, 3);
 INSERT INTO OrderLine_T  (OrderID, ProductID, OrderedQuantity)
-VALUES  (1010, 8, 10));
+VALUES  (1010, 8, 10);
 
 -- Displaying messages - Use double quotation marks with SELECT for cleaner display. 
 -- Otherwise, messages are displayed twice, both as header and value.
