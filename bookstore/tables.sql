@@ -48,10 +48,10 @@ CONSTRAINT Email_PK PRIMARY KEY (Email));
 
 CREATE TABLE Shopping_Cart_T
              (ID                 INTEGER(15)     NOT NULL,
-              Cutomer_Email      VARCHAR(50)             ,
+              Customer_Email      VARCHAR(50)             ,
 
 CONSTRAINT ID_PK PRIMARY KEY (ID),
-CONSTRAINT Cutomer_Email_FK1 FOREIGN KEY (Cutomer_Email) REFERENCES Customer_T(Email));
+CONSTRAINT Customer_Email_FK1 FOREIGN KEY (Customer_Email) REFERENCES Customer_T(Email));
 
 CREATE TABLE Shopping_Cart_Book_T
              (ISBN               VARCHAR(20)     NOT NULL,
@@ -106,66 +106,66 @@ INSERT INTO Books_T (ISBN, Title, Author, Year_Published, Genre, Quantity, Cost,
 VALUES ('CSD2281431232', 'Breath of Fresh Air', 'Hal E. Tosis', 2004, 'Horror',2, 6.5, 10.79, 'Simon & Schuster');
 
 INSERT INTO Customer_T (Email, FirstName, LastName, BillingAddress, BillingCity, BillingState, BillingPostalCode, ShippingAddress, ShippingCity, ShippingState, ShippingPostalCode, DateOfBirth)
-VALUES ("russell.bricks@gmail.com", "Russell", "Bricks", "6905 Rockledge Dr", "Bethesda", "MD", 20817, "6905 Rockledge Dr", "Bethesda", "MD", 20817, 22510);
+VALUES ("russell.bricks@gmail.com", "Russell", "Bricks", "6905 Rockledge Dr", "Bethesda", "MD", 20817, "6905 Rockledge Dr", "Bethesda", "MD", 20817, "02/17/1982");
 INSERT INTO Customer_T (Email, FirstName, LastName, BillingAddress, BillingCity, BillingState, BillingPostalCode, ShippingAddress, ShippingCity, ShippingState, ShippingPostalCode, DateOfBirth)
-VALUES ("raymond.flower@hotmail.com", "Raymond", "Flower", "5 Woodfield Mall G-135", "Schaumburg", "IN", 60173, "5 Woodfield Mall G-135", "Schaumburg", "IN", 60173, 22879);
+VALUES ("raymond.flower@hotmail.com", "Raymond", "Flower", "5 Woodfield Mall G-135", "Schaumburg", "IN", 60173, "5 Woodfield Mall G-135", "Schaumburg", "IN", 60173, "05/25/1993");
 INSERT INTO Customer_T (Email, FirstName, LastName, BillingAddress, BillingCity, BillingState, BillingPostalCode, ShippingAddress, ShippingCity, ShippingState, ShippingPostalCode, DateOfBirth)
-VALUES ("aloysius.nightingale@aol.com", "Aloysius", "Nightingale", "4426 E Los Angeles Ave", "Simi Valley", "CA", 93063, "4426 E Los Angeles Ave", "Simi Valley", "CA", 93063, 23115);
+VALUES ("aloysius.nightingale@aol.com", "Aloysius", "Nightingale", "4426 E Los Angeles Ave", "Simi Valley", "CA", 93063, "4426 E Los Angeles Ave", "Simi Valley", "CA", 93063, "07/18/1979");
 INSERT INTO Customer_T (Email, FirstName, LastName, BillingAddress, BillingCity, BillingState, BillingPostalCode, ShippingAddress, ShippingCity, ShippingState, ShippingPostalCode, DateOfBirth)
-VALUES ("freeman.lillypilly@yahoo.com", "Freeman", "Lillypilly", "1086 Georgia 20", "McDonough", "GA", 30253, "1086 Georgia 20", "McDonough", "GA", 30253, 38413);
+VALUES ("freeman.lillypilly@yahoo.com", "Freeman", "Lillypilly", "1086 Georgia 20", "McDonough", "GA", 30253, "1086 Georgia 20", "McDonough", "GA", 30253, "01/27/1983");
 INSERT INTO Customer_T (Email, FirstName, LastName, BillingAddress, BillingCity, BillingState, BillingPostalCode, ShippingAddress, ShippingCity, ShippingState, ShippingPostalCode, DateOfBirth)
-VALUES ("monroe.firethron@gmail.com", "Monroe", "Firethron", "6196 Cleveland Ave", "Columbus", "OH", 43231, "6196 Cleveland Ave", "Columbus", "OH", 43231, 35585);
+VALUES ("monroe.firethron@gmail.com", "Monroe", "Firethron", "6196 Cleveland Ave", "Columbus", "OH", 43231, "6196 Cleveland Ave", "Columbus", "OH", 43231, "10/28/2000");
 INSERT INTO Customer_T (Email, FirstName, LastName, BillingAddress, BillingCity, BillingState, BillingPostalCode, ShippingAddress, ShippingCity, ShippingState, ShippingPostalCode, DateOfBirth)
-VALUES ("orion.inkwell@gmail.com", "Orion", "Inkwell", "535 Garden Ave", "Webster Groves", "MS", 63119, "535 Garden Ave", "Webster Groves", "MS", 63119, 38497);
+VALUES ("orion.inkwell@gmail.com", "Orion", "Inkwell", "535 Garden Ave", "Webster Groves", "MS", 63119, "535 Garden Ave", "Webster Groves", "MS", 63119, "09/24/1974");
 INSERT INTO Customer_T (Email, FirstName, LastName, BillingAddress, BillingCity, BillingState, BillingPostalCode, ShippingAddress, ShippingCity, ShippingState, ShippingPostalCode, DateOfBirth)
-VALUES ("yarrow.magpie@gmail.com", "Yarrow", "Magpie", "91 S Jackson St", "Seattle", "WA", 98104, "P.O. Box 275", "Seattle", "WA", 98104, 23422);
+VALUES ("yarrow.magpie@gmail.com", "Yarrow", "Magpie", "91 S Jackson St", "Seattle", "WA", 98104, "P.O. Box 275", "Seattle", "WA", 98104, "04/28/2002");
 INSERT INTO Customer_T (Email, FirstName, LastName, BillingAddress, BillingCity, BillingState, BillingPostalCode, ShippingAddress, ShippingCity, ShippingState, ShippingPostalCode, DateOfBirth)
-VALUES ("ackley.feather@gmail.com", "Ackley", "Feather", "314 W Northern Ave", "Pueblo", "CO", 81004, "314 W Northern Ave", "Pueblo", "CO", 81004, 18134);
+VALUES ("ackley.feather@gmail.com", "Ackley", "Feather", "314 W Northern Ave", "Pueblo", "CO", 81004, "314 W Northern Ave", "Pueblo", "CO", 81004, "07/17/1995");
 INSERT INTO Customer_T (Email, FirstName, LastName, BillingAddress, BillingCity, BillingState, BillingPostalCode, ShippingAddress, ShippingCity, ShippingState, ShippingPostalCode, DateOfBirth)
-VALUES ("crow.pincushion@gmail.com", "Crow", "Pincushion", "2645 Carnegie Rd", "York", "PA", 17402, "2645 Carnegie Rd", "York", "PA", 17402, 26308);
+VALUES ("crow.pincushion@gmail.com", "Crow", "Pincushion", "2645 Carnegie Rd", "York", "PA", 17402, "2645 Carnegie Rd", "York", "PA", 17402, "11/30/2003");
 INSERT INTO Customer_T (Email, FirstName, LastName, BillingAddress, BillingCity, BillingState, BillingPostalCode, ShippingAddress, ShippingCity, ShippingState, ShippingPostalCode, DateOfBirth)
-VALUES ("gibbon.blackjack@gmail.com", "Gibbon", "Blackjack", "429 Highland Ave", "Salem", "ME", 1970, "429 Highland Ave", "Salem", "ME", 1970, 18941);
+VALUES ("gibbon.blackjack@gmail.com", "Gibbon", "Blackjack", "429 Highland Ave", "Salem", "ME", 1970, "429 Highland Ave", "Salem", "ME", 1970, "06/07/1976");
 INSERT INTO Customer_T (Email, FirstName, LastName, BillingAddress, BillingCity, BillingState, BillingPostalCode, ShippingAddress, ShippingCity, ShippingState, ShippingPostalCode, DateOfBirth)
-VALUES ("flo.rooks@gmail.com", "Flo", "Rooks", "6342 Lantana Rd", "Lake Worth", "FL", 33463, "6342 Lantana Rd", "Lake Worth", "FL", 33463, 35845);
+VALUES ("flo.rooks@gmail.com", "Flo", "Rooks", "6342 Lantana Rd", "Lake Worth", "FL", 33463, "6342 Lantana Rd", "Lake Worth", "FL", 33463, "05/28/1983");
 INSERT INTO Customer_T (Email, FirstName, LastName, BillingAddress, BillingCity, BillingState, BillingPostalCode, ShippingAddress, ShippingCity, ShippingState, ShippingPostalCode, DateOfBirth)
-VALUES ("filomena.hemlock@gmail.com", "Filomena", "Hemlock", "713 S Crouse Ave", "Syracuse", "ND", 13210, "713 S Crouse Ave", "Syracuse", "ND", 13210, 31542);
+VALUES ("filomena.hemlock@gmail.com", "Filomena", "Hemlock", "713 S Crouse Ave", "Syracuse", "ND", 13210, "713 S Crouse Ave", "Syracuse", "ND", 13210, "09/14/1976");
 INSERT INTO Customer_T (Email, FirstName, LastName, BillingAddress, BillingCity, BillingState, BillingPostalCode, ShippingAddress, ShippingCity, ShippingState, ShippingPostalCode, DateOfBirth)
-VALUES ("mandy.butters@gmail.com", "Mandy", "Butters", "31313 N Scottsdale Rd", "Scottsdale", "AR", 85262, "31313 N Scottsdale Rd", "Scottsdale", "AR", 85262, 29116);
+VALUES ("mandy.butters@gmail.com", "Mandy", "Butters", "31313 N Scottsdale Rd", "Scottsdale", "AR", 85262, "31313 N Scottsdale Rd", "Scottsdale", "AR", 85262, "06/08/1991");
 INSERT INTO Customer_T (Email, FirstName, LastName, BillingAddress, BillingCity, BillingState, BillingPostalCode, ShippingAddress, ShippingCity, ShippingState, ShippingPostalCode, DateOfBirth)
-VALUES ("alvena.cribbe@student.hogwarts.edu", "Alvena", "Cribbe", "2051 N Grand Ave", "Nogales", "AR", 85621, "2051 N Grand Ave", "Nogales", "AR", 85621, 31411);
+VALUES ("alvena.cribbe@student.hogwarts.edu", "Alvena", "Cribbe", "2051 N Grand Ave", "Nogales", "AR", 85621, "2051 N Grand Ave", "Nogales", "AR", 85621, "12/23/1997");
 INSERT INTO Customer_T (Email, FirstName, LastName, BillingAddress, BillingCity, BillingState, BillingPostalCode, ShippingAddress, ShippingCity, ShippingState, ShippingPostalCode, DateOfBirth)
-VALUES ("gladys.crane@yahoo.com", "Gladys", "Crane", "7710 SW Barbur Blvd", "Portland", "OR", 97219, "7710 SW Barbur Blvd", "Portland", "OR", 97219, 18590);
+VALUES ("gladys.crane@yahoo.com", "Gladys", "Crane", "7710 SW Barbur Blvd", "Portland", "OR", 97219, "7710 SW Barbur Blvd", "Portland", "OR", 97219, "02/29/1988");
 INSERT INTO Customer_T (Email, FirstName, LastName, BillingAddress, BillingCity, BillingState, BillingPostalCode, ShippingAddress, ShippingCity, ShippingState, ShippingPostalCode, DateOfBirth)
-VALUES ("veronica.myrtle@yahoo.com", "Veronica", "Myrtle", "633 Chestnut St", "Berea", "KY", 40403, "633 Chestnut St", "Berea", "KY", 40403, 17792);
+VALUES ("veronica.myrtle@yahoo.com", "Veronica", "Myrtle", "633 Chestnut St", "Berea", "KY", 40403, "633 Chestnut St", "Berea", "KY", 40403, "06/15/1968");
 INSERT INTO Customer_T (Email, FirstName, LastName, BillingAddress, BillingCity, BillingState, BillingPostalCode, ShippingAddress, ShippingCity, ShippingState, ShippingPostalCode, DateOfBirth)
-VALUES ("aurelia.stinkwood@yahoo.com", "Aurelia", "Stinkwood", "47 E Ridgewood Ave", "Ridgewood", "NM", 7450, "47 E Ridgewood Ave", "Ridgewood", "NM", 7450, 23550);
+VALUES ("aurelia.stinkwood@yahoo.com", "Aurelia", "Stinkwood", "47 E Ridgewood Ave", "Ridgewood", "NM", 7450, "47 E Ridgewood Ave", "Ridgewood", "NM", 7450, "08/27/1985");
 INSERT INTO Customer_T (Email, FirstName, LastName, BillingAddress, BillingCity, BillingState, BillingPostalCode, ShippingAddress, ShippingCity, ShippingState, ShippingPostalCode, DateOfBirth)
-VALUES ("laleh.craft@yahoo.com", "Laleh", "Craft", "300 Washington Ave SE", "Minneapolis", "MN", 55455, "3355 N 4th St", "Minneapolis", "MN", 55412, 34163);
+VALUES ("laleh.craft@yahoo.com", "Laleh", "Craft", "300 Washington Ave SE", "Minneapolis", "MN", 55455, "3355 N 4th St", "Minneapolis", "MN", 55412, "04/29/1993");
 INSERT INTO Customer_T (Email, FirstName, LastName, BillingAddress, BillingCity, BillingState, BillingPostalCode, ShippingAddress, ShippingCity, ShippingState, ShippingPostalCode, DateOfBirth)
-VALUES ("orchid.patt@hotmail.com", "Orchid", "Patt", "5364 Buford Hwy", "Atlanta", "GA", 30340, "5364 Buford Hwy", "Atlanta", "GA", 30340, 23854);
+VALUES ("orchid.patt@hotmail.com", "Orchid", "Patt", "5364 Buford Hwy", "Atlanta", "GA", 30340, "5364 Buford Hwy", "Atlanta", "GA", 30340, "06/14/2002");
 INSERT INTO Customer_T (Email, FirstName, LastName, BillingAddress, BillingCity, BillingState, BillingPostalCode, ShippingAddress, ShippingCity, ShippingState, ShippingPostalCode, DateOfBirth)
-VALUES ("dew.books@hotmail.com", "Dew", "Books", "1720 Story Rd #46", "San Jose", "CA", 95122, "P.O. Box 92482", "San Jose", "CA", 95122, 26595);
+VALUES ("dew.books@hotmail.com", "Dew", "Books", "1720 Story Rd #46", "San Jose", "CA", 95122, "P.O. Box 92482", "San Jose", "CA", 95122, "11/27/1985");
 
-INSERT INTO Shopping_Cart_T  (ID, Cutomer_Email) VALUES (4289564, "russell.bricks@gmail.com");
-INSERT INTO Shopping_Cart_T  (ID, Cutomer_Email) VALUES (6930971, "raymond.flower@hotmail.com");
-INSERT INTO Shopping_Cart_T  (ID, Cutomer_Email) VALUES (1692946, "aloysius.nightingale@aol.com");
-INSERT INTO Shopping_Cart_T  (ID, Cutomer_Email) VALUES (4637087, "freeman.lillypilly@yahoo.com");
-INSERT INTO Shopping_Cart_T  (ID, Cutomer_Email) VALUES (7747989, "monroe.firethron@gmail.com");
-INSERT INTO Shopping_Cart_T  (ID, Cutomer_Email) VALUES (4238378, "orion.inkwell@gmail.com");
-INSERT INTO Shopping_Cart_T  (ID, Cutomer_Email) VALUES (9885458, "yarrow.magpie@gmail.com");
-INSERT INTO Shopping_Cart_T  (ID, Cutomer_Email) VALUES (9760657, "ackley.feather@gmail.com");
-INSERT INTO Shopping_Cart_T  (ID, Cutomer_Email) VALUES (6516709, "crow.pincushion@gmail.com");
-INSERT INTO Shopping_Cart_T  (ID, Cutomer_Email) VALUES (9641540, "gibbon.blackjack@gmail.com");
-INSERT INTO Shopping_Cart_T  (ID, Cutomer_Email) VALUES (5202465, "flo.rooks@gmail.com");
-INSERT INTO Shopping_Cart_T  (ID, Cutomer_Email) VALUES (3368769, "filomena.hemlock@gmail.com");
-INSERT INTO Shopping_Cart_T  (ID, Cutomer_Email) VALUES (2520170, "mandy.butters@gmail.com");
-INSERT INTO Shopping_Cart_T  (ID, Cutomer_Email) VALUES (4897968, "alvena.cribbe@student.hogwarts.edu");
-INSERT INTO Shopping_Cart_T  (ID, Cutomer_Email) VALUES (7514123, "gladys.crane@yahoo.com");
-INSERT INTO Shopping_Cart_T  (ID, Cutomer_Email) VALUES (5180677, "veronica.myrtle@yahoo.com");
-INSERT INTO Shopping_Cart_T  (ID, Cutomer_Email) VALUES (4089203, "aurelia.stinkwood@yahoo.com");
-INSERT INTO Shopping_Cart_T  (ID, Cutomer_Email) VALUES (3455867, "laleh.craft@yahoo.com");
-INSERT INTO Shopping_Cart_T  (ID, Cutomer_Email) VALUES (5005215, "orchid.patt@hotmail.com");
-INSERT INTO Shopping_Cart_T  (ID, Cutomer_Email) VALUES (1595421, "dew.books@hotmail.com");
+INSERT INTO Shopping_Cart_T  (ID, Customer_Email) VALUES (4289564, "russell.bricks@gmail.com");
+INSERT INTO Shopping_Cart_T  (ID, Customer_Email) VALUES (6930971, "raymond.flower@hotmail.com");
+INSERT INTO Shopping_Cart_T  (ID, Customer_Email) VALUES (1692946, "aloysius.nightingale@aol.com");
+INSERT INTO Shopping_Cart_T  (ID, Customer_Email) VALUES (4637087, "freeman.lillypilly@yahoo.com");
+INSERT INTO Shopping_Cart_T  (ID, Customer_Email) VALUES (7747989, "monroe.firethron@gmail.com");
+INSERT INTO Shopping_Cart_T  (ID, Customer_Email) VALUES (4238378, "orion.inkwell@gmail.com");
+INSERT INTO Shopping_Cart_T  (ID, Customer_Email) VALUES (9885458, "yarrow.magpie@gmail.com");
+INSERT INTO Shopping_Cart_T  (ID, Customer_Email) VALUES (9760657, "ackley.feather@gmail.com");
+INSERT INTO Shopping_Cart_T  (ID, Customer_Email) VALUES (6516709, "crow.pincushion@gmail.com");
+INSERT INTO Shopping_Cart_T  (ID, Customer_Email) VALUES (9641540, "gibbon.blackjack@gmail.com");
+INSERT INTO Shopping_Cart_T  (ID, Customer_Email) VALUES (5202465, "flo.rooks@gmail.com");
+INSERT INTO Shopping_Cart_T  (ID, Customer_Email) VALUES (3368769, "filomena.hemlock@gmail.com");
+INSERT INTO Shopping_Cart_T  (ID, Customer_Email) VALUES (2520170, "mandy.butters@gmail.com");
+INSERT INTO Shopping_Cart_T  (ID, Customer_Email) VALUES (4897968, "alvena.cribbe@student.hogwarts.edu");
+INSERT INTO Shopping_Cart_T  (ID, Customer_Email) VALUES (7514123, "gladys.crane@yahoo.com");
+INSERT INTO Shopping_Cart_T  (ID, Customer_Email) VALUES (5180677, "veronica.myrtle@yahoo.com");
+INSERT INTO Shopping_Cart_T  (ID, Customer_Email) VALUES (4089203, "aurelia.stinkwood@yahoo.com");
+INSERT INTO Shopping_Cart_T  (ID, Customer_Email) VALUES (3455867, "laleh.craft@yahoo.com");
+INSERT INTO Shopping_Cart_T  (ID, Customer_Email) VALUES (5005215, "orchid.patt@hotmail.com");
+INSERT INTO Shopping_Cart_T  (ID, Customer_Email) VALUES (1595421, "dew.books@hotmail.com");
 
 INSERT INTO Shopping_Cart_Book_T (ISBN, ShoppingCartID)
 VALUES ("UIK1603095143", 4289564);
